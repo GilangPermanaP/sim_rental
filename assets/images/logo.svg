@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="100%" height="60">
+  <g transform="translate(5, 5)">
+    <!-- Logo Icon: Sleek Minimalist Car/Wheel outline merged with letter 'A' and 'M' -->
+    <!-- Stylized 'A' that looks like a high-speed road or a roof -->
+    <path d="M 15,45 L 30,10 L 45,45" fill="none" stroke="#D65A62" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M 20,33 L 40,33" fill="none" stroke="#D65A62" stroke-width="5" stroke-linecap="round" />
+    <!-- Stylized 'M' that loops like waves or speed lines -->
+    <path d="M 52,45 L 52,10 L 65,30 L 78,10 L 78,45" fill="none" stroke="#3C2224" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- Sleek road/speed curves at the bottom -->
+    <path d="M 5,48 C 30,42 60,42 88,48" fill="none" stroke="#D65A62" stroke-width="3" stroke-linecap="round" />
+    <!-- Tiny wheels below to give the car feel -->
+    <circle cx="25" cy="50" r="3" fill="#3C2224" />
+    <circle cx="68" cy="50" r="3" fill="#3C2224" />
+  </g>
+  <!-- Typography -->
+  <!-- RENTAL -->
+  <text x="105" y="32" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="20" font-weight="700" fill="#3C2224" letter-spacing="1">RENTAL</text>
+  <!-- AM -->
+  <text x="105" y="52" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="22" font-weight="900" fill="#D65A62" letter-spacing="1.5">AM</text>
+</svg>
