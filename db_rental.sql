@@ -50,8 +50,8 @@ CREATE TABLE IF NOT EXISTS transaksi_sewa (
 );
 
 INSERT IGNORE INTO user (id, username, password, nama_lengkap, role) VALUES 
-(1, 'Ayu Mulyasih', '$2y$10$u.2WS5gxxOXnamOm75bnEeAxyDKvOnlzVD2BZxpWEB1.xDkZsDDwO', 'Ayu Mulyasih', 'Admin'),
-(2, 'Ayuu', '$2y$10$nKH5SQ9m3THIM5L828kxG.wLVy1OSjxtu7ROCBfiUiJUZV073COGu', 'Ayu Mulyasih', 'Operator');
+(1, 'Ayu Mulyasih', '$2y$10$2pd/7LE4T8oGrY4Z9nYyo.ym2iXlrTZSIeZKZZNZ7kW9eMzp69ECu', 'Ayu Mulyasih', 'Admin'),
+(2, 'Ayuu', '$2y$10$sI3N0BUCF2f85fxrsiawdOaabSPqlhiecNvz7QoHS8WXw0PLNAKyi', 'Ayu Mulyasih', 'Operator');
 
 INSERT IGNORE INTO tarif_sewa (id_tarif, jenis_kendaraan, tarif_per_hari) VALUES
 (1, 'Motor', 80000.00),
