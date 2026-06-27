@@ -21,6 +21,23 @@ $sidebar_class = ($current_action === 'cetak_laporan') ? 'sidebar no-print' : 's
             </a>
         </li>
         <?php endif; ?>
+        <li class="<?php echo (strpos($current_action, 'pelanggan') !== false || $current_action === 'master_pelanggan') ? 'active' : ''; ?>">
+            <a href="index.php?action=master_pelanggan">
+                <i class="fa-solid fa-users"></i> Master Pelanggan
+            </a>
+        </li>
+        <?php if ($user_role === 'Admin'): ?>
+        <li class="<?php echo (strpos($current_action, 'tarif_sewa') !== false || $current_action === 'master_tarif_sewa') ? 'active' : ''; ?>">
+            <a href="index.php?action=master_tarif_sewa">
+                <i class="fa-solid fa-tags"></i> Master Tarif Sewa
+            </a>
+        </li>
+        <li class="<?php echo (strpos($current_action, 'user') !== false && $current_action !== 'logout') ? 'active' : ''; ?>">
+            <a href="index.php?action=master_user">
+                <i class="fa-solid fa-user-gear"></i> Master User
+            </a>
+        </li>
+        <?php endif; ?>
         <li class="<?php echo (strpos($current_action, 'transaksi') !== false || $current_action === 'form_transaksi') ? 'active' : ''; ?>">
             <a href="index.php?action=form_transaksi">
                 <i class="fa-solid fa-cash-register"></i> Transaksi Kasir

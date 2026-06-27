@@ -33,7 +33,12 @@ if ($action === 'login') {
 
 // RBAC Guard
 if (isset($_SESSION['role'])) {
-    $forbidden = ['master_kendaraan', 'kendaraan_create', 'kendaraan_update', 'kendaraan_delete', 'cetak_laporan'];
+    $forbidden = [
+        'master_kendaraan', 'kendaraan_create', 'kendaraan_update', 'kendaraan_delete',
+        'master_tarif_sewa', 'tarif_sewa_create', 'tarif_sewa_update', 'tarif_sewa_delete',
+        'master_user', 'user_create', 'user_update', 'user_delete',
+        'cetak_laporan'
+    ];
     if ($_SESSION['role'] === 'Operator' && in_array($action, $forbidden)) {
         $_SESSION['error_message'] = "Error: Operator tidak memiliki hak akses ke modul ini!";
         header("Location: index.php?action=dashboard");
@@ -78,6 +83,66 @@ switch ($action) {
     case 'kendaraan_delete':
         require_once 'controllers/KendaraanController.php';
         $controller = new KendaraanController($db);
+        $controller->delete();
+        break;
+    case 'master_pelanggan':
+        require_once 'controllers/PelangganController.php';
+        $controller = new PelangganController($db);
+        $controller->index();
+        break;
+    case 'pelanggan_create':
+        require_once 'controllers/PelangganController.php';
+        $controller = new PelangganController($db);
+        $controller->create();
+        break;
+    case 'pelanggan_update':
+        require_once 'controllers/PelangganController.php';
+        $controller = new PelangganController($db);
+        $controller->update();
+        break;
+    case 'pelanggan_delete':
+        require_once 'controllers/PelangganController.php';
+        $controller = new PelangganController($db);
+        $controller->delete();
+        break;
+    case 'master_tarif_sewa':
+        require_once 'controllers/TarifSewaController.php';
+        $controller = new TarifSewaController($db);
+        $controller->index();
+        break;
+    case 'tarif_sewa_create':
+        require_once 'controllers/TarifSewaController.php';
+        $controller = new TarifSewaController($db);
+        $controller->create();
+        break;
+    case 'tarif_sewa_update':
+        require_once 'controllers/TarifSewaController.php';
+        $controller = new TarifSewaController($db);
+        $controller->update();
+        break;
+    case 'tarif_sewa_delete':
+        require_once 'controllers/TarifSewaController.php';
+        $controller = new TarifSewaController($db);
+        $controller->delete();
+        break;
+    case 'master_user':
+        require_once 'controllers/UserController.php';
+        $controller = new UserController($db);
+        $controller->index();
+        break;
+    case 'user_create':
+        require_once 'controllers/UserController.php';
+        $controller = new UserController($db);
+        $controller->create();
+        break;
+    case 'user_update':
+        require_once 'controllers/UserController.php';
+        $controller = new UserController($db);
+        $controller->update();
+        break;
+    case 'user_delete':
+        require_once 'controllers/UserController.php';
+        $controller = new UserController($db);
         $controller->delete();
         break;
     case 'form_transaksi':

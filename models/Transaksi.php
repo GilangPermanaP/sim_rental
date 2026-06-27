@@ -55,15 +55,12 @@ class Transaksi {
             $lama_sewa = 1;
         }
 
-        if ($jenis_kendaraan === 'Motor') {
-            $tarif_dasar = 80000;
-        } elseif ($jenis_kendaraan === 'City Car') {
-            $tarif_dasar = 350000;
-        } elseif ($jenis_kendaraan === 'SUV/Premium') {
-            $tarif_dasar = 700000;
-        } else {
-            $tarif_dasar = 0;
-        }
+        $query = "SELECT tarif_per_hari FROM tarif_sewa WHERE jenis_kendaraan = :jenis LIMIT 0,1";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":jenis", $jenis_kendaraan);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $tarif_dasar = $row ? (float)$row['tarif_per_hari'] : 0.0;
 
         $denda = 0.0;
         $diskon = 0.0;
